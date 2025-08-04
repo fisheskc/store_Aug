@@ -31,7 +31,7 @@ export default clerkMiddleware(async(auth, req) => {
   //   auth().protect(); // Protect the route if it matches the defined criteria
   // }
 
-   if (!isPublicRoute(req)) auth.protect();
+   if (!isPublicRoute(req)) await auth.protect();
 });
 
 export const config = {
