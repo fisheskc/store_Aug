@@ -8,6 +8,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url)); // R:\test\apps\
 
 const nextConfig = {
   /* config options here */
+  reactComponentAnnotation: {
+   enabled: process.env.NODE_ENV === 'development',
+ },
   reactStrictMode: true,
   turbopack: { root: path.resolve(__dirname, "../../") }, // R:\test
   images: {
