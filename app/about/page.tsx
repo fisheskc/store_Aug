@@ -1,9 +1,4 @@
-// import db from '@/utils/db'
-// We turned this function into async, since everytime we will communicate with the database,
-// the queries are going to be synchronous.
-// We only have the static content
 function AboutPage() {
-  // This has been set up as a flex parent since inside of the heading, as we have the text as well as the span.
  
   return (
     <section>
