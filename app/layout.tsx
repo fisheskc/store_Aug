@@ -12,13 +12,14 @@ export const metadata: Metadata = {
   description: 'A nifty store built with Next.js',
 };
 
+
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode, 
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <html lang='en' suppressHydrationWarning>
         <body className={inter.className}>
           <Providers>
