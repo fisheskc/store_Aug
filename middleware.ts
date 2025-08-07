@@ -8,12 +8,12 @@ const isPublicRoute = createRouteMatcher(['/', '/products(.*)', '/about']);
 // & inorder  to restrict access to all of the pages, so admin/sales, products, essentially all of them
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
 
-export default clerkMiddleware((auth, req) => {
+export default clerkMiddleware(async(auth, req) => {
   // export default clerkMiddleware(async (auth, req) => {
   // In order to check that, we will use auth userID,
   // if this true, it means user is admin user
   // If not, means user is regular user & user is not an admin user
-  const { userId } = auth();
+  const { userId } = await auth();
     
   const isAdminUser = userId === process.env.ADMIN_USER_ID;
 
@@ -31,7 +31,7 @@ export default clerkMiddleware((auth, req) => {
   //   auth().protect(); // Protect the route if it matches the defined criteria
   // }
 
-   if (!isPublicRoute(req)) auth().protect();
+   if (!isPublicRoute(req)) await auth.protect();
 });
 
 export const config = {
