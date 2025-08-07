@@ -3,8 +3,9 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url)); // R:\test\apps\docs
 
-// import type { NextConfig } from "next";7
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 
 const nextConfig = {
   /* config options here */
